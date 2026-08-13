@@ -24,7 +24,7 @@ transfer to RX 7900 XTX/XT-class cards (same silicon family), with less VRAM.
 | Platform | ASUS ProArt B850-Creator WiFi (AM5), DDR5-6400, FCLK pinned 2000 MHz |
 | Power | 220 W cap per GPU (vBIOS ceiling 230 W) |
 | OS | Ubuntu 24.04 LTS |
-| Engines | Ollama (pinned `0.32.5-rocm`), vLLM ROCm images (`0.19.1`/rocm 7.13 and `0.23.0`/rocm 7.14 `rdna`), llama.cpp |
+| Engines | Ollama (pinned `0.32.9-rocm`), vLLM ROCm images (`0.19.1`/rocm 7.13 and `0.23.0`/rocm 7.14 `rdna`), llama.cpp |
 
 ## Headline results (2026-08 unified final)
 
@@ -48,6 +48,12 @@ multi-turn agentic tool loop. Full tables and caveats:
 
 ¹ thinking-budget-bound even at a 3072-token cap — a floor, not a capability
 measurement. See the [thinking-models finding](findings/thinking-models-vs-harnesses.md).
+
+**2026-08-13 addendum:** Meta's **Muse Glimmer 30B** (dense, thinking, Apache
+2.0), benched 3 days post-release: **0.97 pass@1 at 27.5 tok/s** — best dense
+score we've measured, but 3.5× slower than the equal-quality 3B-active MoE and
+non-converging on the tool loop. Details:
+[`results/2026-08-muse-glimmer.md`](results/2026-08-muse-glimmer.md).
 
 The result that matters for agentic use: **small-active MoE wins**. A 3B-active
 model beat a 123B dense model on quality *and* ran 13× faster, and was the only
@@ -83,6 +89,8 @@ question.
 - [`methodology.md`](methodology.md) — harness design, scoring, sandboxing,
   normalization, threats to validity
 - [`results/2026-08-unified-final.md`](results/2026-08-unified-final.md) — round 2 full data
+- [`results/2026-08-muse-glimmer.md`](results/2026-08-muse-glimmer.md) — Muse
+  Glimmer 30B addendum (day-3 numbers, same harness)
 - [`results/2026-08-per-leg.csv`](results/2026-08-per-leg.csv) — raw per-leg
   latency/throughput (117 rows)
 - [`results/2026-05-round1.md`](results/2026-05-round1.md) — round 1 summary
