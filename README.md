@@ -87,6 +87,12 @@ question.
   and **5 W — the empty-card floor —** on the Vulkan (RADV) backend, same
   model, same card. Ollama residency sits in between (dense ~+40 W, MoE
   ~110 W). If a model must stay warm on RDNA3, pin it under Vulkan.
+- **[Parakeet-TDT-0.6B-v3 vs Whisper large-v3 on held-out long-form English](findings/parakeet-vs-whisper-long-form.md)** —
+  on ~119k words of uploader-written caption references, the 0.6B Parakeet on
+  **CPU** beats whisper large-v3 (GPU, beam 5) **14.0% to 17.0%** corpus WER
+  (8.2 vs 12.6 excluding a bad-reference card), equal salient recall, ~zero
+  decoder collapse, and the safer failure shape (deletions, not insertions).
+  Whisper keeps vocabulary priming, translation, and 99-language coverage.
 - Engine version matters more than folklore: an Ollama 0.24 → 0.32.5 upgrade
   alone lifted the winning model's decode **+30%** (75.8 → 93.6 tok/s era-on-era).
 
