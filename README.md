@@ -81,6 +81,12 @@ question.
   took one model from a measured 0.07 to its true 0.96. If your eval doesn't
   capture the reasoning field and budget ≥4k tokens, your reasoning-model
   scores are floors.
+- **[Resident models: HIP idles at 80–87 W, Vulkan at 5 W](findings/resident-model-idle-power-vulkan-vs-hip.md)** —
+  a llama.cpp server with a dense LLM loaded and no requests draws **80–87 W**
+  on the HIP backend ([ROCm/ROCm#2625](https://github.com/ROCm/ROCm/issues/2625))
+  and **5 W — the empty-card floor —** on the Vulkan (RADV) backend, same
+  model, same card. Ollama residency sits in between (dense ~+40 W, MoE
+  ~110 W). If a model must stay warm on RDNA3, pin it under Vulkan.
 - Engine version matters more than folklore: an Ollama 0.24 → 0.32.5 upgrade
   alone lifted the winning model's decode **+30%** (75.8 → 93.6 tok/s era-on-era).
 
@@ -95,7 +101,7 @@ question.
   latency/throughput (117 rows)
 - [`results/2026-05-round1.md`](results/2026-05-round1.md) — round 1 summary
   (single-GPU era; absolute numbers obsoleted by engine upgrades)
-- [`findings/`](findings/) — the three engineering writeups
+- [`findings/`](findings/) — the engineering writeups
 
 ## License
 
