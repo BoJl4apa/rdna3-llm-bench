@@ -1,0 +1,40 @@
+# .claude/ouro.toml — the ouro binding for this repo. Schema: ouro/docs/binding.md
+# Validate: python <ouro>/bin/ouro-binding.py check
+schema = 1
+
+[repo]
+slug = "BoJl4apa/rdna3-llm-bench"
+default_branch = "main"
+protected_branch_prefixes = []
+checkout = "C:/DEV/GIT/rdna3-llm-bench"
+
+[labels]
+scope = []
+area = []
+
+# Results-publication repo: prose, CSVs, and findings only, no code and no test suite.
+# The gate is whitespace hygiene on the diff.
+[[gate]]
+areas = ["*"]
+run = "git diff --check"
+
+[ship]
+policy = "stop-at-pr"
+review = "adversarial-review"
+test_first_for_bugs = false
+
+[rolling_issues]
+drift_audit = "Docs drift audit"
+loop_runs = "Loop runs"
+
+[authority]
+local = []
+
+[overlays]
+implement = []
+land = []
+drift = ["results/**"]
+
+[owner]
+role = "loop owner"
+ruling_approvers = ["BoJl4apa"]
