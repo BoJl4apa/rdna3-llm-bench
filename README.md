@@ -93,6 +93,10 @@ question.
   (8.2 vs 12.6 excluding a bad-reference card), equal salient recall, ~zero
   decoder collapse, and the safer failure shape (deletions, not insertions).
   Whisper keeps vocabulary priming, translation, and 99-language coverage.
+- **[A Hebrew STT lane: ivrit.ai's large-v3 fine-tune vs stock large-v3](findings/hebrew-stt-lane.md)** —
+  on 38 real Hebrew dictations the fine-tune beat stock large-v3 on 12, lost on 4,
+  tied the rest at the same latency; the scripted 10-item corpus could not see it,
+  and the fine-tune must never see non-Hebrew audio, so it serves as a routed lane.
 - Engine version matters more than folklore: an Ollama 0.24 → 0.32.5 upgrade
   alone lifted the winning model's decode **+30%** (75.8 → 93.6 tok/s era-on-era).
 
