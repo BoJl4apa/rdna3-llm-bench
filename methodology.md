@@ -29,10 +29,17 @@ as noted in [`results/2026-05-round1.md`](results/2026-05-round1.md).
    design questions). Objective legs measure latency/throughput; artifact
    quality was additionally hand-rated out-of-band.
 3. **Agentic tool loop** — a multi-step rename-toolchain task requiring
-   native structured tool calls, `MAX_TOOL_TURNS=12`. The metric is
-   *convergence*: does the model ever return a turn free of tool calls
-   (i.e. declare itself done)? This leg separated the field more than
-   pass@1 did — 6 of 9 candidates never converged.
+   native structured tool calls, `MAX_TOOL_TURNS=12`. In the 2026-08 round
+   the metric was *convergence* — does the model ever return a turn free of
+   tool calls — measured **once per candidate**. That turned out to be
+   inadequate: convergence is bimodal run-to-run, so a single draw is not a
+   model property (see the [convergence-instability
+   finding](findings/tool-loop-convergence-instability.md)). The harness now
+   repeats tool prompts N times, records a per-run `exit_reason`
+   (`answered` / `capped` / `error` / `no_tool_calls`), scores **task
+   completion** deterministically against the stub world's 12 known rename
+   sites (separately from loop termination), gates on a quiet box with
+   per-run box-state snapshots, and reports counts over n, never a rate.
 
 ## Scoring hygiene
 
