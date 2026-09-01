@@ -34,7 +34,7 @@ HumanEval-100 (official harness, sandboxed) + 12 synthetic tasks + a
 multi-turn agentic tool loop. Full tables and caveats:
 [`results/2026-08-unified-final.md`](results/2026-08-unified-final.md).
 
-| candidate | pass@1 | decode tok/s | agentic tool loop |
+| candidate | pass@1 | decode tok/s | agentic tool loop¹ |
 |---|---:|---:|---|
 | **qwen3-coder:30b** (30B-A3B) | **0.98** | **93.6** | **converged, 4 turns** |
 | gemma4:26b-a4b | 0.96 | 70.5 | 12-turn cap |
@@ -44,9 +44,14 @@ multi-turn agentic tool loop. Full tables and caveats:
 | mistral-small-4-119b | 0.89 | 56.7 | 12-turn cap |
 | devstral-2-123b | 0.88 | 7.0 | converged, 7 turns |
 | devstral-small-2 | 0.88 | 31.5 | 12-turn cap |
-| glm-4.5-air | 0.63¹ | 36.2 | 12-turn cap |
+| glm-4.5-air | 0.63² | 36.2 | 12-turn cap |
 
-¹ thinking-budget-bound even at a 3072-token cap — a floor, not a capability
+¹ **single-sample column.** Every tool-loop cell above is n=1; repeat
+measurement later showed the outcome is bimodal run-to-run — read
+[the convergence-instability finding](findings/tool-loop-convergence-instability.md)
+before citing any cell.
+
+² thinking-budget-bound even at a 3072-token cap — a floor, not a capability
 measurement. See the [thinking-models finding](findings/thinking-models-vs-harnesses.md).
 
 **2026-08-13 addendum:** Meta's **Muse Glimmer 30B** (dense, thinking, Apache
@@ -56,10 +61,12 @@ non-converging on the tool loop. Details:
 [`results/2026-08-muse-glimmer.md`](results/2026-08-muse-glimmer.md).
 
 The result that matters for agentic use: **small-active MoE wins**. A 3B-active
-model beat a 123B dense model on quality *and* ran 13× faster, and was the only
-fast model in the field to actually finish a multi-turn tool loop. On
-bandwidth-bound consumer hardware, "biggest model that fits" is the wrong
-question.
+model beat a 123B dense model on quality *and* ran 13× faster. (It was also the
+only fast model whose single tool-loop sample converged — but that column is
+n=1 per candidate and convergence turned out to be a per-run draw, not a
+property; see [the convergence-instability
+finding](findings/tool-loop-convergence-instability.md).) On bandwidth-bound
+consumer hardware, "biggest model that fits" is the wrong question.
 
 ## Engineering findings
 

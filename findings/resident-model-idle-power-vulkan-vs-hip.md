@@ -84,5 +84,11 @@ Landmines:
   power, not a wall meter.
 - The 8B HIP/Vulkan pair was measured 2026-08-24; the 12B Vulkan lane
   2026-08-25 (llama.cpp build 10603). ROCm 7.x host, Ubuntu 24.04.
+- Tested 2026-09-02: **the stuck-queue spin costs power only.** With a
+  whisper.cpp/HIP container deliberately uncapped and its card pinned at
+  100% busy / 78–104 W, an LLM serving 20 tool-loop runs on the *other* card
+  measured identical convergence (1/20 vs 1/20 on the quiet control) and
+  ≤1% decode delta (93.9 vs 94.7 tok/s). Details: [tool-loop convergence
+  instability](tool-loop-convergence-instability.md).
 - Not tested: whether newer ROCm releases fix the HIP idle spin. #2625 has
   been open since 2023.

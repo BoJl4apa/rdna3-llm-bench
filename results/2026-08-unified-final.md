@@ -29,19 +29,26 @@ change altered its loop behavior — noted, not investigated.
 within 12 turns — it never declared itself done. All nine candidates used
 native structured tool calls; none degraded to text-described tool use.
 
+> **Addendum 2026-09-02:** this column is **n=1 per candidate** and repeat
+> measurement showed the outcome is bimodal run-to-run — a "converged" cell
+> can be one lucky draw and a "12-turn cap" cell one unlucky one. Details and
+> the reworked metric: [tool-loop convergence
+> instability](../findings/tool-loop-convergence-instability.md).
+
 ## Reading the table
 
 - **Small-active MoE dominates for agentic serving.** The 3B-active winner
-  beat the 123B dense model on pass@1 (0.98 vs 0.88) at **13× the speed**, and
-  fast tool-loop convergence was unique to it. Decode on this hardware is
-  VRAM-bandwidth-bound: active-parameter bytes, not total parameters, set the
-  speed ceiling.
-- **Convergence separates more than pass@1.** At q4 on this class of model,
-  HumanEval is nearly saturated (0.88–0.98). Whether a model can *finish* a
-  multi-turn tool task cleanly is the differentiator that matters in an
-  agentic harness, and only 3 of 9 managed it.
-- **Speed is a quality feature in tool loops:** a 4-turn convergence at 93
-  tok/s is interactive; the same convergence at 7 tok/s (devstral-2) is not.
+  beat the 123B dense model on pass@1 (0.98 vs 0.88) at **13× the speed**.
+  Decode on this hardware is VRAM-bandwidth-bound: active-parameter bytes,
+  not total parameters, set the speed ceiling.
+- **The convergence column separated the field in this round's single
+  samples (3 of 9 converged) — but see the addendum above:** at n=1 per
+  candidate those cells are draws, not properties, and the later repeat
+  measurements demoted this leg from "differentiator" to "needs repeats and
+  task scoring to mean anything".
+- **Speed is a quality feature in tool loops:** a 4-turn loop at 93 tok/s is
+  interactive; the same loop at 7 tok/s (devstral-2) is not — whichever mode
+  a given run samples.
 
 ## Per-leg latency/throughput
 
