@@ -24,7 +24,7 @@ transfer to RX 7900 XTX/XT-class cards (same silicon family), with less VRAM.
 | Platform | ASUS ProArt B850-Creator WiFi (AM5), DDR5-6400, FCLK pinned 2000 MHz |
 | Power | 220 W cap per GPU (vBIOS ceiling 230 W) |
 | OS | Ubuntu 24.04 LTS |
-| Engines | Ollama (pinned `0.32.9-rocm`), vLLM ROCm images (`0.19.1`/rocm 7.13 and `0.23.0`/rocm 7.14 `rdna`), llama.cpp |
+| Engines | Ollama (pinned `0.33.2-rocm`; earlier rounds `0.32.5`/`0.32.9`), vLLM ROCm images (`0.19.1`/rocm 7.13 and `0.23.0`/rocm 7.14 `rdna`), llama.cpp |
 
 ## Headline results (2026-08 unified final)
 
@@ -68,6 +68,37 @@ property; see [the convergence-instability
 finding](findings/tool-loop-convergence-instability.md).) On bandwidth-bound
 consumer hardware, "biggest model that fits" is the wrong question.
 
+## 2026-09 round — six candidates, and a rebuilt agentic leg
+
+Ollama `0.33.2-rocm`, four models released since 2026-08:
+[`results/2026-09-round.md`](results/2026-09-round.md).
+
+Footnote ¹ above says the old tool-loop column needed repeats. This round says
+it also needed a **second scenario shape**. Run alongside the rename task, an
+iterative fix→test→fix loop — two defects behind a fail-fast test tool, the
+second invisible until the first is fixed — ranks the field differently: the
+incumbent leads the rename column and is the only model of six that cannot
+close the loop, while three models that never finish the rename close it 5/5.
+
+| candidate | pass@1 | tok/s | rename³ | fix-loop |
+|---|---:|---:|:---:|:---:|
+| **qwen3-coder:30b** *(incumbent)* | **0.99** | 96.7 | **4/5** | 1/5 |
+| qwen3.8:27b | 0.98 | 42.1 | **5/5** | 5/5 |
+| qwen3.5-122b | 0.97 | 41.8 | 0/5 | 5/5 |
+| gemma4:26b-a4b | 0.93 | 73.9 | 0/5 | 5/5 |
+| nemotron-3.5-lightning | 0.87 | **161** | 0/5 | 5/5 |
+| laguna-xs-2.1 | 0.62³ | 90.5 | 0/5 | 3/5 |
+
+³ The rename column measures **batching propensity**, by construction: a
+strictly serial run needs ≥13 turns against a 12-turn cap. Three candidates
+emit exactly one call per turn and are bounded by the cap, not the task.
+laguna-xs-2.1's 0.62 is likewise a token-budget floor — it scores 1.00 on the
+58 problems it finishes under the 3072-token cap and is truncated on the other
+42. Both caveats in full on the round page.
+
+Why it matters if you're building an agentic eval:
+[`findings/two-agentic-modes.md`](findings/two-agentic-modes.md).
+
 ## Engineering findings
 
 - **[Dual-RDNA3 tensor parallelism](findings/rccl-dual-gpu-tp2.md)** — vLLM
@@ -82,6 +113,13 @@ consumer hardware, "biggest model that fits" is the wrong question.
   vLLM v0.23.0's RDNA3 int4 kernels take the same GPTQ model from 3.9 to
   **29.3 tok/s** single-stream and **125.8 tok/s aggregate at 8-way
   concurrency** (71 ms TTFT). The gate: *symmetric* GPTQ int4 only.
+- **["Agentic" is two skills, and they don't correlate](findings/two-agentic-modes.md)** —
+  a task enumerable up front and an iterative *fix→observe→fix* loop rank models
+  differently enough that no ordering reproduces both columns: one model has
+  both skills, one has only batching, three have only the loop. Also: completing
+  a task and declaring yourself done are different metrics; your turn cap
+  silently decides what the headline column measures; and the answer format is
+  part of the scenario.
 - **[Thinking models break naive harnesses](findings/thinking-models-vs-harnesses.md)** —
   reasoning-mode models emit their chain-of-thought in a separate API field
   and return *empty* content when token-capped. Three successive harness bugs
@@ -111,6 +149,8 @@ consumer hardware, "biggest model that fits" is the wrong question.
 
 - [`methodology.md`](methodology.md) — harness design, scoring, sandboxing,
   normalization, threats to validity
+- [`results/2026-09-round.md`](results/2026-09-round.md) — round 3: four new
+  challengers, three-scenario agentic leg at n=5
 - [`results/2026-08-unified-final.md`](results/2026-08-unified-final.md) — round 2 full data
 - [`results/2026-08-muse-glimmer.md`](results/2026-08-muse-glimmer.md) — Muse
   Glimmer 30B addendum (day-3 numbers, same harness)
