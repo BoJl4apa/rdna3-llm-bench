@@ -4,6 +4,12 @@ One box, one harness per round, every candidate on the same engine version.
 This page describes the 2026-08 round (the "unified final"); round 1 differed
 as noted in [`results/2026-05-round1.md`](results/2026-05-round1.md).
 
+> **The agentic leg is now three scenarios at n=5** (2026-09), not one at n=1 —
+> see leg 3 below. The round it ran in:
+> [`results/2026-09-round.md`](results/2026-09-round.md). HumanEval and the
+> synthetic legs are unchanged, so those columns stay cross-round comparable at
+> equal engine versions.
+
 ## Serving
 
 - **Engine:** Ollama pinned at `ollama/ollama:0.32.5-rocm` for every
@@ -40,6 +46,19 @@ as noted in [`results/2026-05-round1.md`](results/2026-05-round1.md).
    completion** deterministically against the stub world's 12 known rename
    sites (separately from loop termination), gates on a quiet box with
    per-run box-state snapshots, and reports counts over n, never a rate.
+
+   **Widened to three scenarios in 2026-09**, because repeats alone were not
+   enough: the rename task is enumerable up front, so with a 12-turn cap
+   against a ≥13-turn serial path it measures *batching propensity*, and models
+   rank differently on a task whose next step only exists after you act. Added:
+   `staged-rate-limit-fix` (stateful — edits really apply, `run_tests` is
+   fail-fast so the second defect is invisible until the first is fixed;
+   complete = both fixed *and* the suite re-run green) and
+   `null-shipment-diagnosis` (read-only root-cause hunt with a red-herring
+   throw site; the answer must end in two structured lines, parsed rather than
+   graded as prose). Each scenario is a per-run world instance, so state never
+   leaks between repeats. Why it mattered:
+   [`findings/two-agentic-modes.md`](findings/two-agentic-modes.md).
 
 ## Scoring hygiene
 
