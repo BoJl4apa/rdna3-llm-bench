@@ -89,8 +89,9 @@ Tool calls issued per run in scenario A, against a hard 12-turn cap:
 | gemma4:26b-a4b | 12, 12, 7, 12, 12 | 10, 0, 4, 4, 0 | strictly serial |
 | laguna-xs-2.1 | 12, 12, 12, 12, 12 | 2, 2, 0, 0, 0 | strictly serial |
 
-Three models emit **exactly one tool call per turn and exactly 12 of them** —
-they are bounded by the cap, not by the task. Their 0/5 says "does not batch",
+Three models emit **exactly one tool call per turn** — 12 of them whenever they
+run to the cap, which is 14 of their 15 runs. They are bounded by the cap, not
+by the task. Their 0/5 says "does not batch",
 and nothing about whether they could rename 12 sites given 14 turns. Column A
 is honest about what it measures once you read it that way; it is dishonest if
 you label it "agentic ability", which is what our 2026-08 round did.
