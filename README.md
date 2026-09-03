@@ -83,11 +83,15 @@ close the loop, while three models that never finish the rename close it 5/5.
 | candidate | pass@1 | tok/s | rename³ | fix-loop |
 |---|---:|---:|:---:|:---:|
 | **qwen3-coder:30b** *(incumbent)* | **0.99** | 96.7 | **4/5** | 1/5 |
-| qwen3.8:27b | 0.98 | 42.1 | **5/5** | 5/5 |
+| qwen3.8:27b⁰ | 0.98 | 42.1 | **5/5** | 5/5 |
 | qwen3.5-122b | 0.97 | 41.8 | 0/5 | 5/5 |
 | gemma4:26b-a4b | 0.93 | 73.9 | 0/5 | 5/5 |
 | nemotron-3.5-lightning | 0.87 | **161** | 0/5 | 5/5 |
 | laguna-xs-2.1 | 0.62³ | 90.5 | 0/5 | 3/5 |
+
+⁰ The `qwen3.8:27b` tag is digest-identical to `qwen3.8:27b-mtp-q4_K_M` — this
+row is the MTP build, worth **1.65×** decode over plain q4 at equal quality:
+[`results/2026-09-qwen3.8.md`](results/2026-09-qwen3.8.md).
 
 ³ The rename column measures **batching propensity**, by construction: a
 strictly serial run needs ≥13 turns against a 12-turn cap. Three candidates
@@ -151,6 +155,8 @@ Why it matters if you're building an agentic eval:
   normalization, threats to validity
 - [`results/2026-09-round.md`](results/2026-09-round.md) — round 3: four new
   challengers, three-scenario agentic leg at n=5
+- [`results/2026-09-qwen3.8.md`](results/2026-09-qwen3.8.md) — Qwen3.8-27B
+  MTP vs plain q4_K_M: 1.65× decode, and the tag that hides which one you ran
 - [`results/2026-08-unified-final.md`](results/2026-08-unified-final.md) — round 2 full data
 - [`results/2026-08-muse-glimmer.md`](results/2026-08-muse-glimmer.md) — Muse
   Glimmer 30B addendum (day-3 numbers, same harness)

@@ -56,11 +56,15 @@ grading prose.
 | model | params | pass@1 | tok/s | A. rename | B. fix-loop | C. diagnosis |
 |---|---|---:|---:|:---:|:---:|:---:|
 | qwen3-coder:30b | 30B-A3B MoE | 0.99 | 96.7 | **4/5** | 1/5 | 5/5 |
-| qwen3.8:27b | 27.3B dense | 0.98 | 42.1 | **5/5** | 5/5 | 5/5 |
+| qwen3.8:27b⁰ | 27.3B dense | 0.98 | 42.1 | **5/5** | 5/5 | 5/5 |
 | qwen3.5-122b | 122B MoE | 0.97 | 41.8 | 0/5 | 5/5 | 5/5 |
 | gemma4:26b-a4b | 26B-A4B MoE | 0.93 | 73.9 | 0/5 | 5/5 | 5/5 |
 | nemotron-3.5-lightning | 32.9B-A3B MoE | 0.87 | **161** | 0/5 | 5/5 | 5/5 |
 | laguna-xs-2.1 | 33.4B | 0.62¹ | 90.5 | 0/5 | 3/5 | 5/5 |
+
+⁰ The `qwen3.8:27b` tag is digest-identical to `qwen3.8:27b-mtp-q4_K_M`, so this
+row is the MTP build. The plain-q4 arm scores the same on all three scenarios
+([A/B](../results/2026-09-qwen3.8.md)), so nothing in this finding turns on it.
 
 ¹ A token-budget floor, not a capability measurement: 1.00 on the 58 problems
 it finishes under the cap. See the [round page](../results/2026-09-round.md).
