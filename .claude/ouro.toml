@@ -6,7 +6,6 @@ schema = 1
 slug = "BoJl4apa/rdna3-llm-bench"
 default_branch = "main"
 protected_branch_prefixes = []
-checkout = "C:/DEV/GIT/rdna3-llm-bench"
 
 [labels]
 scope = []
