@@ -24,7 +24,7 @@ transfer to RX 7900 XTX/XT-class cards (same silicon family), with less VRAM.
 | Platform | ASUS ProArt B850-Creator WiFi (AM5), DDR5-6400, FCLK pinned 2000 MHz |
 | Power | 220 W cap per GPU (vBIOS ceiling 230 W) |
 | OS | Ubuntu 24.04 LTS |
-| Engines | Ollama (pinned `0.33.2-rocm`; earlier rounds `0.32.5`/`0.32.9`), vLLM ROCm images (`0.19.1`/rocm 7.13 and `0.23.0`/rocm 7.14 `rdna`), llama.cpp |
+| Engines | Ollama (pinned `0.35.0-rocm`; earlier rounds `0.33.2`/`0.32.5`/`0.32.9`), vLLM ROCm images (`0.19.1`/rocm 7.13 and `0.23.0`/rocm 7.14 `rdna`), llama.cpp |
 
 ## Headline results (2026-08 unified final)
 
@@ -146,6 +146,12 @@ Why it matters if you're building an agentic eval:
   on 38 real Hebrew dictations the fine-tune beat stock large-v3 on 12, lost on 4,
   tied the rest at the same latency; the scripted 10-item corpus could not see it,
   and the fine-tune must never see non-Hebrew audio, so it serves as a routed lane.
+- **[Four STT specialists vs Whisper on mixed-language dictation](findings/stt-specialists-vs-whisper.md)** —
+  GigaAM-v3, Qwen3-ASR-1.7B, Caspi-1.7B and Granite Speech 4.1 2B each fail every
+  pre-set criterion against whisper large-v3 / ivrit.ai large-v3 on our audio. A lane
+  reached by detected language gets code-switched clips, and the specialists keep
+  0 of 14–16 embedded English names (Whisper: 13 of 14). Plus vLLM 0.19.1 ROCm
+  serving notes for Qwen3-ASR/Caspi on gfx1100.
 - Engine version matters more than folklore: an Ollama 0.24 → 0.32.5 upgrade
   alone lifted the winning model's decode **+30%** (75.8 → 93.6 tok/s era-on-era).
 
@@ -153,6 +159,9 @@ Why it matters if you're building an agentic eval:
 
 - [`methodology.md`](methodology.md) — harness design, scoring, sandboxing,
   normalization, threats to validity
+- [`results/2026-10-ollama-0.35-and-typed-judges.md`](results/2026-10-ollama-0.35-and-typed-judges.md) —
+  Ollama 0.33.2 → 0.35.0 route smoke, Ollama's System One typed-question
+  endpoint on ROCm, and CLM-v0.1-8B on vLLM's ROCm pooling runner
 - [`results/2026-09-round.md`](results/2026-09-round.md) — round 3: four new
   challengers, three-scenario agentic leg at n=5
 - [`results/2026-09-qwen3.8.md`](results/2026-09-qwen3.8.md) — Qwen3.8-27B
