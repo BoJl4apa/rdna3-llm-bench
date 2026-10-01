@@ -168,8 +168,8 @@ candidates ran at temperature 0 (GigaAM: greedy RNNT) on a quiet card.
 
 **Licences:** Qwen3-ASR-1.7B is Apache-2.0 and GigaAM-v3 is MIT. Caspi-1.7B
 is **CC-BY-NC-4.0**, which rules it out of any commercial use whatever its
-accuracy. Granite Speech's licence was not checked against the GGUF repack we
-ran.
+accuracy. Granite Speech 4.1 2B is Apache-2.0 per IBM's model card
+(`ibm-granite/granite-speech-4.1-2b`); we ran IBM's own GGUF build of it.
 
 ## Caveats
 
