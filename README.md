@@ -152,6 +152,16 @@ Why it matters if you're building an agentic eval:
   reached by detected language gets code-switched clips, and the specialists keep
   0 of 14–16 embedded English names (Whisper: 13 of 14). Plus vLLM 0.19.1 ROCm
   serving notes for Qwen3-ASR/Caspi on gfx1100.
+- **[Two whisper.cpp HIP servers spin a card at 120 W; `GPU_MAX_HW_QUEUES=1` stops it](findings/whisper-hip-queue-cap.md)** —
+  the cap takes the card from 120 W / 100 % gfx down to the empty-card floor, and on a
+  real dictation corpus costs no measurable latency (within one 10 ms step on clips and
+  1 % on an 88 s file, identical WER).
+- **[A card-pinned Ollama evicts on overflow; it does not spill to CPU](findings/ollama-card-pinned-overflow.md)** —
+  Ollama 0.35 limited to one W7800 answers a fan-out that does not fit by evicting idle
+  runners and reloading, with every loaded runner fully in VRAM. It also explains why we
+  pin: a dual-GPU accounting defect
+  ([ollama/ollama#18349](https://github.com/ollama/ollama/issues/18349)) stacks
+  models onto an occupied card.
 - Engine version matters more than folklore: an Ollama 0.24 → 0.32.5 upgrade
   alone lifted the winning model's decode **+30%** (75.8 → 93.6 tok/s era-on-era).
 
