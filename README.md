@@ -24,7 +24,7 @@ transfer to RX 7900 XTX/XT-class cards (same silicon family), with less VRAM.
 | Platform | ASUS ProArt B850-Creator WiFi (AM5), DDR5-6400, FCLK pinned 2000 MHz |
 | Power | 220 W cap per GPU (vBIOS ceiling 230 W) |
 | OS | Ubuntu 24.04 LTS |
-| Engines | Ollama (pinned `0.35.0-rocm`; earlier rounds `0.33.2`/`0.32.5`/`0.32.9`), vLLM ROCm images (`0.19.1`/rocm 7.13 and `0.23.0`/rocm 7.14 `rdna`), llama.cpp |
+| Engines | Ollama (pinned `0.40.3-rocm`; earlier rounds `0.35.0`/`0.33.2`/`0.32.5`/`0.32.9`), vLLM ROCm images (`0.19.1`/rocm 7.13 and `0.23.0`/rocm 7.14 `rdna`), llama.cpp |
 
 ## Headline results (2026-08 unified final)
 

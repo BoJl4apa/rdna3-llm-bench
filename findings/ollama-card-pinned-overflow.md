@@ -78,6 +78,30 @@ workloads were untouched in both runs.
   call pays one reload with the card empty and three cold loads beside a 22 GB
   neighbour.
 
+## Production follow-up — 2026-10-23
+
+Production Ollama now exposes only physical card 1
+(`ROCR_VISIBLE_DEVICES=1`, `HIP_VISIBLE_DEVICES=0`) on
+`ollama/ollama:0.40.3-rocm`. Card 0 is reserved for two resident Whisper
+servers and a resident Gemma 4 12B Q4_K_M polish server under Vulkan.
+Background generation and embeddings can reload models; interactive audio
+should remain warm.
+
+A deployment smoke check posted two chat requests and one embedding request
+concurrently through the gateway: Gemma 4 26B-A4B at 65,536 context, Gemma 4 E4B
+at 16,384, and Qwen3-embedding 4B at 40,960. All three remained loaded, each
+reporting `size_vram == size`. Runner logs placed all three on the physical
+second W7800. Card 1 grew from 7.426 to 31.278 GiB used; card 0 stayed at
+16.107 GiB. A 32-token polish probe while those models remained loaded measured
+61.7 tok/s. Neither Whisper server nor the polish server restarted, and the
+polish watchdog restart counter did not change.
+
+This is one deployment smoke check, not a repeat of the overflow experiments
+above or a guarantee of latency under every workload. The earlier two-card
+co-residency measurements remain historical results; production no longer
+offers both cards to Ollama. Two-card experiments need a separate instance and
+an audio maintenance window.
+
 ## Caveats
 
 - n=1 box, gfx1100, ROCm 7.x, Ollama 0.35.0 only. Load times are from a warm NVMe
