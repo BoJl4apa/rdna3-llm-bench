@@ -14,7 +14,6 @@ area = []
 # Results-publication repo: prose, CSVs, and findings only, no code and no test suite.
 # The gate is whitespace hygiene on the diff.
 [[gate]]
-areas = ["*"]
 run = "git diff --check"
 
 [ship]
