@@ -1,0 +1,1410 @@
+{
+  "hardware": "AMD Radeon Pro W7800 48 GB, gfx1100",
+  "date": "2026-11-13",
+  "model_revision": "95feb5d0cbfc8e5a95bffb067d03537cbf35be3e",
+  "runtime_revision": "712f7c9491ad7875fc985e24e166afe43ae649b0",
+  "voice": "libri_female_6147",
+  "steps": 16,
+  "cfg": 3.0,
+  "speed": 1.0,
+  "runs": {
+    "rocm644-one-smi": {
+      "exit_code": 0,
+      "requests": [
+        {
+          "index": 0,
+          "language": "he",
+          "text": "שלום עולם. זהו מבחן של הקראה בעברית.",
+          "elapsed": 0.5968448979838286,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-one-smi-0.wav"
+        },
+        {
+          "index": 1,
+          "language": "he",
+          "text": "מחר בבוקר ניפגש ליד תחנת הרכבת. אל תשכח להביא את הספר.",
+          "elapsed": 0.2840593100117985,
+          "audio_seconds": 4.31891156462585,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-one-smi-1.wav"
+        },
+        {
+          "index": 2,
+          "language": "ru",
+          "text": "prʲɪvʲˈet!   ˈɛtə prɐvʲˈerkə ʧtʲˈenʲɪjə tʲˈekstə nˈa rˈuskəm jɪzɨkʲˈe.  ",
+          "elapsed": 0.2317576210189145,
+          "audio_seconds": 3.0650340136054424,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-one-smi-2.wav"
+        },
+        {
+          "index": 3,
+          "language": "ru",
+          "text": "zˈaftrə ˈutrəm mɨ fstrʲˈetʲɪmsʲə vˈozʲlʲe vɐɡzˈaɫə.   nʲe zɐbˈutʲ vzʲætʲ knʲˈiɡʊ.  ",
+          "elapsed": 0.23260029801167548,
+          "audio_seconds": 3.6919727891156464,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-one-smi-3.wav"
+        },
+        {
+          "index": 4,
+          "language": "ru",
+          "text": "nˈa ɡɐrʲˈe stɐˈit zˈamək.   nˈa dvʲɪrʲˈi vʲɪsʲˈit zɐmˈok.  ",
+          "elapsed": 0.19856924400664866,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-one-smi-4.wav"
+        }
+      ],
+      "samples": [
+        {
+          "seconds": 5.06,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "16.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "19612102656"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "32.0",
+              "GPU use (%)": "1",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "1766363136"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.018",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 6,
+            "51e4": 5
+          }
+        },
+        {
+          "seconds": 10.12,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "16.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "19612102656"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "73.0",
+              "GPU use (%)": "20",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.014",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 6,
+            "51e4": 3
+          }
+        }
+      ],
+      "he": {
+        "count": 2,
+        "min": 0.2840593100117985,
+        "median": 0.44045210399781354,
+        "max": 0.5968448979838286
+      },
+      "ru": {
+        "count": 3,
+        "min": 0.19856924400664866,
+        "median": 0.2317576210189145,
+        "max": 0.23260029801167548
+      }
+    },
+    "rocm644-gpu0": {
+      "exit_code": 0,
+      "requests": [
+        {
+          "index": 0,
+          "language": "he",
+          "text": "שלום עולם. זהו מבחן של הקראה בעברית.",
+          "elapsed": 0.6197477020032238,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-gpu0-0.wav"
+        },
+        {
+          "index": 1,
+          "language": "he",
+          "text": "מחר בבוקר ניפגש ליד תחנת הרכבת. אל תשכח להביא את הספר.",
+          "elapsed": 0.29707739502191544,
+          "audio_seconds": 4.31891156462585,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-gpu0-1.wav"
+        },
+        {
+          "index": 2,
+          "language": "ru",
+          "text": "prʲɪvʲˈet!   ˈɛtə prɐvʲˈerkə ʧtʲˈenʲɪjə tʲˈekstə nˈa rˈuskəm jɪzɨkʲˈe.  ",
+          "elapsed": 0.24147199298022315,
+          "audio_seconds": 3.0650340136054424,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-gpu0-2.wav"
+        },
+        {
+          "index": 3,
+          "language": "ru",
+          "text": "zˈaftrə ˈutrəm mɨ fstrʲˈetʲɪmsʲə vˈozʲlʲe vɐɡzˈaɫə.   nʲe zɐbˈutʲ vzʲætʲ knʲˈiɡʊ.  ",
+          "elapsed": 0.24082504998659715,
+          "audio_seconds": 3.6919727891156464,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-gpu0-3.wav"
+        },
+        {
+          "index": 4,
+          "language": "ru",
+          "text": "nˈa ɡɐrʲˈe stɐˈit zˈamək.   nˈa dvʲɪrʲˈi vʲɪsʲˈit zɐmˈok.  ",
+          "elapsed": 0.21630921098403633,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-gpu0-4.wav"
+        }
+      ],
+      "samples": [
+        {
+          "seconds": 5.06,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "86.0",
+              "GPU use (%)": "28",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500866560"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "15.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.02",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 10.11,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "51.0",
+              "GPU use (%)": "9",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500866560"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "15.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.014",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 15.17,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "15.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500866560"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "15.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.012",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 20.22,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "17.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500866560"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "15.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.014",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 25.28,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "19.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500866560"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "15.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.017",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 30.34,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "16.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500866560"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "18.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.011",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 35.39,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "16.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500866560"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "18.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.014",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 40.45,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "15.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500866560"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "18.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.014",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 45.51,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "15.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500866560"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "18.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.02",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 50.57,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "15.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500866560"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "18.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.014",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 55.62,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "142.0",
+              "GPU use (%)": "66",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "19612102656"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "18.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.023",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 6,
+            "51e4": 3
+          }
+        }
+      ],
+      "he": {
+        "count": 2,
+        "min": 0.29707739502191544,
+        "median": 0.45841254851256963,
+        "max": 0.6197477020032238
+      },
+      "ru": {
+        "count": 3,
+        "min": 0.21630921098403633,
+        "median": 0.24082504998659715,
+        "max": 0.24147199298022315
+      }
+    },
+    "rocm644-overlap": {
+      "exit_code": 0,
+      "requests": [
+        {
+          "index": 0,
+          "language": "he",
+          "text": "שלום עולם. זהו מבחן של הקראה בעברית.",
+          "elapsed": 0.7198149819741957,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-0.wav"
+        },
+        {
+          "index": 1,
+          "language": "he",
+          "text": "מחר בבוקר ניפגש ליד תחנת הרכבת. אל תשכח להביא את הספר.",
+          "elapsed": 0.4502631640061736,
+          "audio_seconds": 4.31891156462585,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-1.wav"
+        },
+        {
+          "index": 2,
+          "language": "ru",
+          "text": "prʲɪvʲˈet!   ˈɛtə prɐvʲˈerkə ʧtʲˈenʲɪjə tʲˈekstə nˈa rˈuskəm jɪzɨkʲˈe.  ",
+          "elapsed": 0.287940581998555,
+          "audio_seconds": 3.0650340136054424,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-2.wav"
+        },
+        {
+          "index": 3,
+          "language": "ru",
+          "text": "zˈaftrə ˈutrəm mɨ fstrʲˈetʲɪmsʲə vˈozʲlʲe vɐɡzˈaɫə.   nʲe zɐbˈutʲ vzʲætʲ knʲˈiɡʊ.  ",
+          "elapsed": 0.2787522260041442,
+          "audio_seconds": 3.6919727891156464,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-3.wav"
+        },
+        {
+          "index": 4,
+          "language": "ru",
+          "text": "nˈa ɡɐrʲˈe stɐˈit zˈamək.   nˈa dvʲɪrʲˈi vʲɪsʲˈit zɐmˈok.  ",
+          "elapsed": 0.3118280509952456,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-4.wav"
+        },
+        {
+          "index": 5,
+          "language": "he",
+          "text": "שלום עולם. זהו מבחן של הקראה בעברית.",
+          "elapsed": 0.33015761600108817,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-5.wav"
+        },
+        {
+          "index": 6,
+          "language": "he",
+          "text": "מחר בבוקר ניפגש ליד תחנת הרכבת. אל תשכח להביא את הספר.",
+          "elapsed": 0.32801521199871786,
+          "audio_seconds": 4.31891156462585,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-6.wav"
+        },
+        {
+          "index": 7,
+          "language": "ru",
+          "text": "prʲɪvʲˈet!   ˈɛtə prɐvʲˈerkə ʧtʲˈenʲɪjə tʲˈekstə nˈa rˈuskəm jɪzɨkʲˈe.  ",
+          "elapsed": 0.41037000200594775,
+          "audio_seconds": 3.0650340136054424,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-7.wav"
+        },
+        {
+          "index": 8,
+          "language": "ru",
+          "text": "zˈaftrə ˈutrəm mɨ fstrʲˈetʲɪmsʲə vˈozʲlʲe vɐɡzˈaɫə.   nʲe zɐbˈutʲ vzʲætʲ knʲˈiɡʊ.  ",
+          "elapsed": 0.27462812699377537,
+          "audio_seconds": 3.6919727891156464,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-8.wav"
+        },
+        {
+          "index": 9,
+          "language": "ru",
+          "text": "nˈa ɡɐrʲˈe stɐˈit zˈamək.   nˈa dvʲɪrʲˈi vʲɪsʲˈit zɐmˈok.  ",
+          "elapsed": 0.25658373298938386,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-9.wav"
+        },
+        {
+          "index": 10,
+          "language": "he",
+          "text": "שלום עולם. זהו מבחן של הקראה בעברית.",
+          "elapsed": 0.3738555629970506,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-10.wav"
+        },
+        {
+          "index": 11,
+          "language": "he",
+          "text": "מחר בבוקר ניפגש ליד תחנת הרכבת. אל תשכח להביא את הספר.",
+          "elapsed": 0.3582820630108472,
+          "audio_seconds": 4.31891156462585,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-11.wav"
+        },
+        {
+          "index": 12,
+          "language": "ru",
+          "text": "prʲɪvʲˈet!   ˈɛtə prɐvʲˈerkə ʧtʲˈenʲɪjə tʲˈekstə nˈa rˈuskəm jɪzɨkʲˈe.  ",
+          "elapsed": 0.21291691300575621,
+          "audio_seconds": 3.0650340136054424,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-12.wav"
+        },
+        {
+          "index": 13,
+          "language": "ru",
+          "text": "zˈaftrə ˈutrəm mɨ fstrʲˈetʲɪmsʲə vˈozʲlʲe vɐɡzˈaɫə.   nʲe zɐbˈutʲ vzʲætʲ knʲˈiɡʊ.  ",
+          "elapsed": 0.30389321598340757,
+          "audio_seconds": 3.6919727891156464,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-13.wav"
+        },
+        {
+          "index": 14,
+          "language": "ru",
+          "text": "nˈa ɡɐrʲˈe stɐˈit zˈamək.   nˈa dvʲɪrʲˈi vʲɪsʲˈit zɐmˈok.  ",
+          "elapsed": 0.2884831809788011,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-14.wav"
+        },
+        {
+          "index": 15,
+          "language": "he",
+          "text": "שלום עולם. זהו מבחן של הקראה בעברית.",
+          "elapsed": 0.2996323929983191,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-15.wav"
+        },
+        {
+          "index": 16,
+          "language": "he",
+          "text": "מחר בבוקר ניפגש ליד תחנת הרכבת. אל תשכח להביא את הספר.",
+          "elapsed": 0.4706673570035491,
+          "audio_seconds": 4.31891156462585,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-16.wav"
+        },
+        {
+          "index": 17,
+          "language": "ru",
+          "text": "prʲɪvʲˈet!   ˈɛtə prɐvʲˈerkə ʧtʲˈenʲɪjə tʲˈekstə nˈa rˈuskəm jɪzɨkʲˈe.  ",
+          "elapsed": 0.26659358700271696,
+          "audio_seconds": 3.0650340136054424,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-17.wav"
+        },
+        {
+          "index": 18,
+          "language": "ru",
+          "text": "zˈaftrə ˈutrəm mɨ fstrʲˈetʲɪmsʲə vˈozʲlʲe vɐɡzˈaɫə.   nʲe zɐbˈutʲ vzʲætʲ knʲˈiɡʊ.  ",
+          "elapsed": 0.25916343001881614,
+          "audio_seconds": 3.6919727891156464,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-18.wav"
+        },
+        {
+          "index": 19,
+          "language": "ru",
+          "text": "nˈa ɡɐrʲˈe stɐˈit zˈamək.   nˈa dvʲɪrʲˈi vʲɪsʲˈit zɐmˈok.  ",
+          "elapsed": 0.3444110290147364,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-19.wav"
+        },
+        {
+          "index": 20,
+          "language": "he",
+          "text": "שלום עולם. זהו מבחן של הקראה בעברית.",
+          "elapsed": 0.34013394598150626,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-20.wav"
+        },
+        {
+          "index": 21,
+          "language": "he",
+          "text": "מחר בבוקר ניפגש ליד תחנת הרכבת. אל תשכח להביא את הספר.",
+          "elapsed": 0.3256935339886695,
+          "audio_seconds": 4.31891156462585,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-21.wav"
+        },
+        {
+          "index": 22,
+          "language": "ru",
+          "text": "prʲɪvʲˈet!   ˈɛtə prɐvʲˈerkə ʧtʲˈenʲɪjə tʲˈekstə nˈa rˈuskəm jɪzɨkʲˈe.  ",
+          "elapsed": 0.24919022398535162,
+          "audio_seconds": 3.0650340136054424,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-22.wav"
+        },
+        {
+          "index": 23,
+          "language": "ru",
+          "text": "zˈaftrə ˈutrəm mɨ fstrʲˈetʲɪmsʲə vˈozʲlʲe vɐɡzˈaɫə.   nʲe zɐbˈutʲ vzʲætʲ knʲˈiɡʊ.  ",
+          "elapsed": 0.29699000899563543,
+          "audio_seconds": 3.6919727891156464,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-23.wav"
+        },
+        {
+          "index": 24,
+          "language": "ru",
+          "text": "nˈa ɡɐrʲˈe stɐˈit zˈamək.   nˈa dvʲɪrʲˈi vʲɪsʲˈit zɐmˈok.  ",
+          "elapsed": 0.25951833999715745,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-24.wav"
+        },
+        {
+          "index": 25,
+          "language": "he",
+          "text": "שלום עולם. זהו מבחן של הקראה בעברית.",
+          "elapsed": 0.25748076097806916,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-25.wav"
+        },
+        {
+          "index": 26,
+          "language": "he",
+          "text": "מחר בבוקר ניפגש ליד תחנת הרכבת. אל תשכח להביא את הספר.",
+          "elapsed": 0.24712511399411596,
+          "audio_seconds": 4.31891156462585,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-26.wav"
+        },
+        {
+          "index": 27,
+          "language": "ru",
+          "text": "prʲɪvʲˈet!   ˈɛtə prɐvʲˈerkə ʧtʲˈenʲɪjə tʲˈekstə nˈa rˈuskəm jɪzɨkʲˈe.  ",
+          "elapsed": 0.18969736600411125,
+          "audio_seconds": 3.0650340136054424,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-27.wav"
+        },
+        {
+          "index": 28,
+          "language": "ru",
+          "text": "zˈaftrə ˈutrəm mɨ fstrʲˈetʲɪmsʲə vˈozʲlʲe vɐɡzˈaɫə.   nʲe zɐbˈutʲ vzʲætʲ knʲˈiɡʊ.  ",
+          "elapsed": 0.19428259201231413,
+          "audio_seconds": 3.6919727891156464,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-28.wav"
+        },
+        {
+          "index": 29,
+          "language": "ru",
+          "text": "nˈa ɡɐrʲˈe stɐˈit zˈamək.   nˈa dvʲɪrʲˈi vʲɪsʲˈit zɐmˈok.  ",
+          "elapsed": 0.18712432100437582,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-29.wav"
+        },
+        {
+          "index": 30,
+          "language": "he",
+          "text": "שלום עולם. זהו מבחן של הקראה בעברית.",
+          "elapsed": 0.2286092930007726,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-30.wav"
+        },
+        {
+          "index": 31,
+          "language": "he",
+          "text": "מחר בבוקר ניפגש ליד תחנת הרכבת. אל תשכח להביא את הספר.",
+          "elapsed": 0.24780384701443836,
+          "audio_seconds": 4.31891156462585,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-31.wav"
+        },
+        {
+          "index": 32,
+          "language": "ru",
+          "text": "prʲɪvʲˈet!   ˈɛtə prɐvʲˈerkə ʧtʲˈenʲɪjə tʲˈekstə nˈa rˈuskəm jɪzɨkʲˈe.  ",
+          "elapsed": 0.19018551302724518,
+          "audio_seconds": 3.0650340136054424,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-32.wav"
+        },
+        {
+          "index": 33,
+          "language": "ru",
+          "text": "zˈaftrə ˈutrəm mɨ fstrʲˈetʲɪmsʲə vˈozʲlʲe vɐɡzˈaɫə.   nʲe zɐbˈutʲ vzʲætʲ knʲˈiɡʊ.  ",
+          "elapsed": 0.19492656999500468,
+          "audio_seconds": 3.6919727891156464,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-33.wav"
+        },
+        {
+          "index": 34,
+          "language": "ru",
+          "text": "nˈa ɡɐrʲˈe stɐˈit zˈamək.   nˈa dvʲɪrʲˈi vʲɪsʲˈit zɐmˈok.  ",
+          "elapsed": 0.18753650799044408,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-34.wav"
+        },
+        {
+          "index": 35,
+          "language": "he",
+          "text": "שלום עולם. זהו מבחן של הקראה בעברית.",
+          "elapsed": 0.22873379499651492,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-35.wav"
+        },
+        {
+          "index": 36,
+          "language": "he",
+          "text": "מחר בבוקר ניפגש ליד תחנת הרכבת. אל תשכח להביא את הספר.",
+          "elapsed": 0.24759693100349978,
+          "audio_seconds": 4.31891156462585,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-36.wav"
+        },
+        {
+          "index": 37,
+          "language": "ru",
+          "text": "prʲɪvʲˈet!   ˈɛtə prɐvʲˈerkə ʧtʲˈenʲɪjə tʲˈekstə nˈa rˈuskəm jɪzɨkʲˈe.  ",
+          "elapsed": 0.18984185499721207,
+          "audio_seconds": 3.0650340136054424,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-37.wav"
+        },
+        {
+          "index": 38,
+          "language": "ru",
+          "text": "zˈaftrə ˈutrəm mɨ fstrʲˈetʲɪmsʲə vˈozʲlʲe vɐɡzˈaɫə.   nʲe zɐbˈutʲ vzʲætʲ knʲˈiɡʊ.  ",
+          "elapsed": 0.19441590100177564,
+          "audio_seconds": 3.6919727891156464,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-38.wav"
+        },
+        {
+          "index": 39,
+          "language": "ru",
+          "text": "nˈa ɡɐrʲˈe stɐˈit zˈamək.   nˈa dvʲɪrʲˈi vʲɪsʲˈit zɐmˈok.  ",
+          "elapsed": 0.18742328698863275,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-39.wav"
+        },
+        {
+          "index": 40,
+          "language": "he",
+          "text": "שלום עולם. זהו מבחן של הקראה בעברית.",
+          "elapsed": 0.22807067199028097,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-40.wav"
+        },
+        {
+          "index": 41,
+          "language": "he",
+          "text": "מחר בבוקר ניפגש ליד תחנת הרכבת. אל תשכח להביא את הספר.",
+          "elapsed": 0.2471749969990924,
+          "audio_seconds": 4.31891156462585,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-41.wav"
+        },
+        {
+          "index": 42,
+          "language": "ru",
+          "text": "prʲɪvʲˈet!   ˈɛtə prɐvʲˈerkə ʧtʲˈenʲɪjə tʲˈekstə nˈa rˈuskəm jɪzɨkʲˈe.  ",
+          "elapsed": 0.19056855599046685,
+          "audio_seconds": 3.0650340136054424,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-42.wav"
+        },
+        {
+          "index": 43,
+          "language": "ru",
+          "text": "zˈaftrə ˈutrəm mɨ fstrʲˈetʲɪmsʲə vˈozʲlʲe vɐɡzˈaɫə.   nʲe zɐbˈutʲ vzʲætʲ knʲˈiɡʊ.  ",
+          "elapsed": 0.19496973999775946,
+          "audio_seconds": 3.6919727891156464,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-43.wav"
+        },
+        {
+          "index": 44,
+          "language": "ru",
+          "text": "nˈa ɡɐrʲˈe stɐˈit zˈamək.   nˈa dvʲɪrʲˈi vʲɪsʲˈit zɐmˈok.  ",
+          "elapsed": 0.1875525779905729,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-44.wav"
+        },
+        {
+          "index": 45,
+          "language": "he",
+          "text": "שלום עולם. זהו מבחן של הקראה בעברית.",
+          "elapsed": 0.2280240559775848,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-45.wav"
+        },
+        {
+          "index": 46,
+          "language": "he",
+          "text": "מחר בבוקר ניפגש ליד תחנת הרכבת. אל תשכח להביא את הספר.",
+          "elapsed": 0.24897424297523685,
+          "audio_seconds": 4.31891156462585,
+          "sample_rate": 44100,
+          "filename": "blue-he-rocm644-overlap-46.wav"
+        },
+        {
+          "index": 47,
+          "language": "ru",
+          "text": "prʲɪvʲˈet!   ˈɛtə prɐvʲˈerkə ʧtʲˈenʲɪjə tʲˈekstə nˈa rˈuskəm jɪzɨkʲˈe.  ",
+          "elapsed": 0.1907138759852387,
+          "audio_seconds": 3.0650340136054424,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-47.wav"
+        },
+        {
+          "index": 48,
+          "language": "ru",
+          "text": "zˈaftrə ˈutrəm mɨ fstrʲˈetʲɪmsʲə vˈozʲlʲe vɐɡzˈaɫə.   nʲe zɐbˈutʲ vzʲætʲ knʲˈiɡʊ.  ",
+          "elapsed": 0.19493309198878706,
+          "audio_seconds": 3.6919727891156464,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-48.wav"
+        },
+        {
+          "index": 49,
+          "language": "ru",
+          "text": "nˈa ɡɐrʲˈe stɐˈit zˈamək.   nˈa dvʲɪrʲˈi vʲɪsʲˈit zɐmˈok.  ",
+          "elapsed": 0.18732013599947095,
+          "audio_seconds": 2.507755102040816,
+          "sample_rate": 44100,
+          "filename": "blue-ru-rocm644-overlap-49.wav"
+        }
+      ],
+      "samples": [
+        {
+          "seconds": 5.06,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "47.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "20642181120"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "25.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.025",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 10.12,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "199.0",
+              "GPU use (%)": "99",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500715008"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "25.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.023",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 15.17,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "186.0",
+              "GPU use (%)": "96",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500715008"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "25.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.014",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 20.23,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "58.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500715008"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "25.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.013",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 25.29,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "24.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500715008"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "25.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.013",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 30.34,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "17.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500715008"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "18.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.018",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 35.4,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "17.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500715008"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "17.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.012",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 40.46,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "17.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500715008"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "17.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.015",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 45.51,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "17.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500715008"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "17.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.013",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 50.57,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "17.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500715008"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "17.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.012",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 55.62,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "17.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500715008"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "17.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.015",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 60.68,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "15.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "21500715008"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "15.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.013",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 8,
+            "51e4": 3
+          }
+        },
+        {
+          "seconds": 65.74,
+          "power": {
+            "card0": {
+              "Average Graphics Package Power (W)": "55.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "19612102656"
+            },
+            "card1": {
+              "Average Graphics Package Power (W)": "15.0",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "48301604864",
+              "VRAM Total Used Memory (B)": "631386112"
+            },
+            "card2": {
+              "Current Socket Graphics Package Power (W)": "0.013",
+              "GPU use (%)": "0",
+              "VRAM Total Memory (B)": "2147483648",
+              "VRAM Total Used Memory (B)": "16670720"
+            }
+          },
+          "queues": {
+            "d8c6": 6,
+            "51e4": 3
+          }
+        }
+      ],
+      "he": {
+        "count": 20,
+        "min": 0.2280240559775848,
+        "median": 0.27855657698819414,
+        "max": 0.7198149819741957
+      },
+      "ru": {
+        "count": 30,
+        "min": 0.18712432100437582,
+        "median": 0.20394332650175784,
+        "max": 0.41037000200594775
+      }
+    }
+  },
+  "russian_frontend": [
+    {
+      "text": "Привет! Это проверка чтения текста на русском языке.",
+      "stressed": "Прив+ет! +Это пров+ерка чт+ения т+екста на р+усском язык+е.",
+      "ipa": "prʲɪvʲˈet!   ˈɛtə prɐvʲˈerkə ʧtʲˈenʲɪjə tʲˈekstə nˈa rˈuskəm jɪzɨkʲˈe.  ",
+      "frontend_seconds": 0.07423280301736668
+    },
+    {
+      "text": "Завтра утром мы встретимся возле вокзала. Не забудь взять книгу.",
+      "stressed": "З+автра +утром мы встр+етимся в+озле вокз+ала. Не заб+удь взять кн+игу.",
+      "ipa": "zˈaftrə ˈutrəm mɨ fstrʲˈetʲɪmsʲə vˈozʲlʲe vɐɡzˈaɫə.   nʲe zɐbˈutʲ vzʲætʲ knʲˈiɡʊ.  ",
+      "frontend_seconds": 0.08005238600890152
+    },
+    {
+      "text": "На горе стоит замок. На двери висит замок.",
+      "stressed": "На гор+е сто+ит з+амок. На двер+и вис+ит зам+ок.",
+      "ipa": "nˈa ɡɐrʲˈe stɐˈit zˈamək.   nˈa dvʲɪrʲˈi vʲɪsʲˈit zɐmˈok.  ",
+      "frontend_seconds": 0.10311159701086581
+    }
+  ],
+  "asr_sanity_check": [
+    {
+      "filename": "blue-he-rocm64-1.wav",
+      "language": "he",
+      "result": {
+        "text": " מחר בבוקר ניפגש ליד תחנת הרכבת.\n אל תשכח להביא את הספר.\n"
+      }
+    },
+    {
+      "filename": "blue-ru-rocm64-3.wav",
+      "language": "ru",
+      "result": {
+        "text": " Завтра утром мы встретимся возле вокзала. Не забудь взять\n книгу.\n"
+      }
+    },
+    {
+      "filename": "blue-ru-rocm64-4.wav",
+      "language": "ru",
+      "result": {
+        "text": " На горе стоит замок, на двери висит замок.\n"
+      }
+    }
+  ],
+  "overlap_existing_services": [
+    {
+      "run": 0,
+      "task": "stt",
+      "seconds": 1.228,
+      "synthetic_text": "this is a safe english narration test.\n the microphone stays off while these words are read aloud."
+    },
+    {
+      "run": 0,
+      "task": "polish",
+      "seconds": 1.181,
+      "synthetic_text": "This is a synthetic test; the telescope is ready."
+    },
+    {
+      "run": 0,
+      "task": "tts",
+      "seconds": 2.831,
+      "bytes": 3655648
+    },
+    {
+      "run": 1,
+      "task": "stt",
+      "seconds": 1.223,
+      "synthetic_text": "this is a safe english narration test.\n the microphone stays off while these words are read aloud."
+    },
+    {
+      "run": 1,
+      "task": "polish",
+      "seconds": 1.23,
+      "synthetic_text": "This is a synthetic test; the telescope is ready."
+    },
+    {
+      "run": 1,
+      "task": "tts",
+      "seconds": 2.846,
+      "bytes": 3655614
+    },
+    {
+      "run": 2,
+      "task": "stt",
+      "seconds": 1.207,
+      "synthetic_text": "this is a safe english narration test.\n the microphone stays off while these words are read aloud."
+    },
+    {
+      "run": 2,
+      "task": "polish",
+      "seconds": 1.232,
+      "synthetic_text": "This is a synthetic test; the telescope is ready."
+    },
+    {
+      "run": 2,
+      "task": "tts",
+      "seconds": 2.845,
+      "bytes": 3655572
+    }
+  ]
+}
