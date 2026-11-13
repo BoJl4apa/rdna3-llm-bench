@@ -1,4 +1,8 @@
-# Kokoro on gfx1100: fast synthesis and a shared-GPU idle-power problem
+# Kokoro on gfx1100: resolving idle spin with GPU placement and queue budgets
+
+**Update:** placement and queue limits resolved the measured idle spin without
+a kernel upgrade. Warm production audio and coding/RAG GPUs both reach 0% busy;
+see the final qualification below. Earlier sections preserve the investigation.
 
 Measured 2026-11-13 on one Radeon Pro W7800 48 GB (gfx1100), Ryzen 9 9900X,
 Ubuntu 24.04. The GPU already held two whisper.cpp STT servers and a
@@ -111,3 +115,52 @@ A [distinct pending-barrier reproducer remains unresolved with newer firmware
 and userspace](https://github.com/ROCm/TheRock/issues/9484#issuecomment-6729369200),
 so a generic ROCm upgrade is not a demonstrated cure. Investigate queue
 placement before a disruptive kernel experiment.
+
+## Resolution: budget compute queues as well as VRAM
+
+The audio card had seven compute queues before Kokoro: two per whisper.cpp
+process, plus three from a reranker that initialized both GPUs. Confining that
+reranker to GPU1 removed its GPU0 queues. With Kokoro resident, GPU0 now uses
+six queues and idles normally. The unchanged reranker image and synthetic
+ranking fixtures returned identical relevance scores before and after placement.
+
+The other card needed a limit too: coder + embedding under default Ollama HIP
+queue allocation used eight compute queues, plus three from rerank = eleven.
+That recreated 73–74 W / 100% idle activity on GPU1. Setting Ollama
+`GPU_MAX_HW_QUEUES=1` reduced the two tested runners to four compute queues.
+`OLLAMA_MAX_LOADED_MODELS=2` keeps their total with rerank at seven, below the
+eight slots exposed by this kernel. The cap is per process; runtime-internal
+queues mean it is not the actual KFD queue count. Measure new workloads.
+
+| Warm configuration after concurrent inference | GPU0 idle | GPU1 idle |
+|---|---|---|
+| Reranker moved; Ollama uncapped | 15 W / 0% | 73–74 W / 100% |
+| Queue-capped candidate | 14–15 W / 0% | 18–25 W / 0% |
+| Deployed production recheck | 12–18 W / 0% | 16–24 W / 0% |
+
+Samples were taken 15, 30 and 45 seconds after requests, while models remained
+resident. These are card telemetry readings, not whole-host power. Audio used
+about 18.3 GiB VRAM; coding/RAG about 28.8 GiB. No kernel, firmware or BIOS change.
+
+Three simultaneous synthetic rounds covered STT, Vulkan cleanup, ~76 seconds
+of Kokoro narration, coding, embedding and ranking. All functional assertions
+passed. Warm short-fixture coding measured 94.9–101.3 tok/s with the cap versus
+86.7–102.5 without; this is a 16-token smoke check, not a general throughput
+benchmark. STT took 0.749–0.752 s in the capped candidate versus 0.624–0.672 s
+uncapped; narration completed in 2.133–2.173 s versus 2.145–2.244 s. Retain
+these limits rather than claiming statistical equivalence.
+
+Coder used its configured 65,536-token context and embedding reported 40,960;
+both were entirely GPU resident. The test did not fill the context windows.
+A third model request completed and evicted an idle model; choices remain
+available but rotating among more than two pays reload latency. Parallelism
+one, five-minute expiry, Flash Attention and q8 KV cache were retained.
+
+Production Kokoro is back on GPU. Real client-path streaming delivered short
+first audio in 0.183–0.232 s and paragraph first audio in 0.329–0.349 s; valid
+24 kHz mono WAV also passed. Reconciliation was idempotent on a second run.
+
+For additional languages, free VRAM does not justify independent unbounded
+HIP workers: prefer a shared inference process/queue budget and remeasure
+residency, concurrency and idle power. Other model pairs, build contention
+and reliable idle-power monitoring remain separate qualification work.
