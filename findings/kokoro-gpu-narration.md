@@ -1,4 +1,4 @@
-# Kokoro on gfx1100: faster synthesis, but resident HIP has an idle-power cost
+# Kokoro on gfx1100: fast synthesis and a shared-GPU idle-power problem
 
 Measured 2026-11-13 on one Radeon Pro W7800 48 GB (gfx1100), Ryzen 9 9900X,
 Ubuntu 24.04. The GPU already held two whisper.cpp STT servers and a
@@ -80,3 +80,34 @@ Sources: [Kokoro ROCm guidance](https://github.com/remsky/Kokoro-FastAPI/blob/v0
 [Qwen3-TTS](https://github.com/QwenLM/Qwen3-TTS),
 [Silero](https://github.com/snakers4/silero-models),
 [related gfx1100 pending-barrier report](https://github.com/ROCm/TheRock/issues/9484).
+
+## Follow-up: placement changes the idle result (2026-11-13)
+
+The high idle draw is **not universal to resident Kokoro**. A second physical
+W7800, with no Ollama model loaded, reached 19 W / 0% busy while keeping Kokoro
+warm. Same image and synthetic fixtures, `GPU_MAX_HW_QUEUES=2`, one repetition:
+
+| Placement | Idle at 15/30/45 seconds | Short first audio | Paragraph first / complete |
+|---|---|---|---|
+| Shared audio GPU | 74/75/76 W, 100% busy | 0.205 s | 0.313 / 0.602 s |
+| Second GPU, no Ollama model loaded | 24/19/19 W, 0% busy | 0.209 s | 0.316 / 0.607 s |
+
+Both cards have eight KFD compute slots. After the probes exited, the audio
+GPU had seven compute queues: two per Whisper process and three from a HIP
+reranker. The reranker also had three queues on the second card; that card
+was not empty of all other driver clients. Queue oversubscription is the
+leading hypothesis, not a proven causal trace. This does not qualify sharing
+Kokoro with loaded Ollama. The next comparison should constrain the reranker
+away from the audio GPU, then repeat synthesis, STT and idle measurements.
+
+Production temporarily returned to the CPU rollback rather than retaining
+the high standing draw. Narration still passes a real client-path WAV check.
+The host remains on kernel 6.8.0-149 with MES 0x80; no host tuning changed.
+
+There is a relevant newer [AMD GFX11 oversubscription workaround for Linux
+7.4](https://github.com/ROCm/TheRock/issues/9141#issuecomment-6211588196),
+confirmed present in v7.4-rc2 source. On this date that release is still RC.
+A [distinct pending-barrier reproducer remains unresolved with newer firmware
+and userspace](https://github.com/ROCm/TheRock/issues/9484#issuecomment-6729369200),
+so a generic ROCm upgrade is not a demonstrated cure. Investigate queue
+placement before a disruptive kernel experiment.
