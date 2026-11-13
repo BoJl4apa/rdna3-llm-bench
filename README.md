@@ -15,6 +15,10 @@ Everything here was measured on the machine described below. n=1 hardware,
 honest methodology, failure modes documented. gfx1100 findings should
 transfer to RX 7900 XTX/XT-class cards (same silicon family), with less VRAM.
 
+Latest serving finding: [three resident TTS languages on RDNA3](findings/multilingual-gpu-tts.md)
+— English Kokoro plus shared Hebrew BlueTTS/Russian Silero, eight audio-card
+compute queues, and 14–18 W loaded idle in the bounded final-worker test.
+
 ## Hardware
 
 | Component | Value |

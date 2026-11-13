@@ -1,0 +1,330 @@
+{
+  "hardware": "AMD Radeon Pro W7800 48 GB, gfx1100",
+  "date": "2026-11-13",
+  "selected_models": {
+    "he": "BlueTTS 2.5 / libri_female_6147",
+    "ru": "Silero v5_6_ru / xenia"
+  },
+  "serving": {
+    "rows": [
+      {
+        "label": "he-short",
+        "language": "he",
+        "text": "מחר בבוקר ניפגש ליד תחנת הרכבת. אל תשכח להביא את הספר.",
+        "speed": 1,
+        "seconds": 1.1850343740079552,
+        "audio_seconds": 4.31891156462585,
+        "bytes": 380972
+      },
+      {
+        "label": "ru-short",
+        "language": "ru",
+        "text": "Завтра утром мы встретимся возле вокзала. Не забудь взять книгу.",
+        "speed": 1,
+        "seconds": 1.4827704000053927,
+        "audio_seconds": 3.8375,
+        "bytes": 368444
+      },
+      {
+        "label": "he-numbers",
+        "language": "he",
+        "text": "הפגישה מתחילה בשעה 8:30. יש כאן 12 ספרים.",
+        "speed": 1,
+        "seconds": 0.3035468109883368,
+        "audio_seconds": 3.4133333333333336,
+        "bytes": 301100
+      },
+      {
+        "label": "ru-numbers",
+        "language": "ru",
+        "text": "Встреча начинается в 8:30. Здесь лежат 12 книг.",
+        "speed": 1,
+        "seconds": 0.032779886008938774,
+        "audio_seconds": 3.8875,
+        "bytes": 373244
+      },
+      {
+        "label": "he-mixed",
+        "language": "he",
+        "text": "הבדיקה של Windows הסתיימה בהצלחה.",
+        "speed": 1,
+        "seconds": 0.45427146198926494,
+        "audio_seconds": 2.159455782312925,
+        "bytes": 190508
+      },
+      {
+        "label": "he-long",
+        "language": "he",
+        "text": "זהו מבחן הקראה ארוך. אנחנו בודקים שכל המשפטים נשמעים עד הסוף. זהו מבחן הקראה ארוך. אנחנו בודקים שכל המשפטים נשמעים עד הסוף. זהו מבחן הקראה ארוך. אנחנו בודקים שכל המשפטים נשמעים עד הסוף. זהו מבחן הקראה ארוך. אנחנו בודקים שכל המשפטים נשמעים עד הסוף. זהו מבחן הקראה ארוך. אנחנו בודקים שכל המשפטים נשמעים עד הסוף. זהו מבחן הקראה ארוך. אנחנו בודקים שכל המשפטים נשמעים עד הסוף. זהו מבחן הקראה ארוך. אנחנו בודקים שכל המשפטים נשמעים עד הסוף. זהו מבחן הקראה ארוך. אנחנו בודקים שכל המשפטים נשמעים עד הסוף. המשפט האחרון מדבר על חתול כחול.",
+        "speed": 1,
+        "seconds": 2.305787893012166,
+        "audio_seconds": 37.54666666666667,
+        "bytes": 3311660
+      },
+      {
+        "label": "ru-long",
+        "language": "ru",
+        "text": "Это длинная проверка чтения. Мы проверяем, что все предложения звучат до конца. Это длинная проверка чтения. Мы проверяем, что все предложения звучат до конца. Это длинная проверка чтения. Мы проверяем, что все предложения звучат до конца. Это длинная проверка чтения. Мы проверяем, что все предложения звучат до конца. Это длинная проверка чтения. Мы проверяем, что все предложения звучат до конца. Это длинная проверка чтения. Мы проверяем, что все предложения звучат до конца. Последняя фраза про синего кота.",
+        "speed": 1,
+        "seconds": 0.1259914579859469,
+        "audio_seconds": 30.475,
+        "bytes": 2925644
+      },
+      {
+        "label": "ru-tempo-normal",
+        "language": "ru",
+        "text": "Это проверка скорости чтения. Голос должен оставаться естественным.",
+        "speed": 1,
+        "seconds": 0.03319974700571038,
+        "audio_seconds": 4.2,
+        "bytes": 403244
+      },
+      {
+        "label": "ru-tempo-fast",
+        "language": "ru",
+        "text": "Это проверка скорости чтения. Голос должен оставаться естественным.",
+        "speed": 1.5,
+        "seconds": 0.06200511200586334,
+        "audio_seconds": 2.8017083333333335,
+        "bytes": 269008
+      }
+    ],
+    "cancel_recovery_seconds": 0.4265954970032908,
+    "negative_requests": "passed"
+  },
+  "overlap_requests": [
+    {
+      "language": "he",
+      "seconds": 1.6981879560044035,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 1.424339325982146,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.7890972220047843,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.032582007988821715,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.848314387985738,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.06252005801070482,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.8482645149924792,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.032853582000825554,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.9673420740000438,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.03263779100961983,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.8200647269841284,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.03245693500502966,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.7863414970051963,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.062267378001706675,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.8791856339958031,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.03192750000744127,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.7275934829958715,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.0334159680060111,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.3949349040049128,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.033417280996218324,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.39761920500313863,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.03254218399524689,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.3972152640053537,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.03354061002028175,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.394939443009207,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.03186936199199408,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.39421982399653643,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.032573942007729784,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.3957678530132398,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.034030821989290416,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.39687758599757217,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.03357596599380486,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.3953655939840246,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.03229887000634335,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.39472655701683834,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.033657456981018186,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.39611819401034154,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.03285160902305506,
+      "bytes": 447644
+    },
+    {
+      "language": "he",
+      "seconds": 0.39439843699801713,
+      "bytes": 417836
+    },
+    {
+      "language": "ru",
+      "seconds": 0.03330120400642045,
+      "bytes": 447644
+    }
+  ],
+  "existing_services_exit": 0,
+  "idle": [
+    {
+      "power_w": 18.0,
+      "utilization_percent": 0,
+      "total_vram_bytes": 22120931328,
+      "compute_queues": 8
+    },
+    {
+      "power_w": 14.0,
+      "utilization_percent": 0,
+      "total_vram_bytes": 22120931328,
+      "compute_queues": 8
+    },
+    {
+      "power_w": 14.0,
+      "utilization_percent": 0,
+      "total_vram_bytes": 22120931328,
+      "compute_queues": 8
+    },
+    {
+      "power_w": 14.0,
+      "utilization_percent": 0,
+      "total_vram_bytes": 22120931328,
+      "compute_queues": 8
+    },
+    {
+      "power_w": 14.0,
+      "utilization_percent": 0,
+      "total_vram_bytes": 22120931328,
+      "compute_queues": 8
+    }
+  ]
+}
