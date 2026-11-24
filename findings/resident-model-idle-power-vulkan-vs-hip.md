@@ -92,3 +92,8 @@ Landmines:
   instability](tool-loop-convergence-instability.md).
 - Not tested: whether newer ROCm releases fix the HIP idle spin. #2625 has
   been open since 2023.
+- **A counter-observation from 2026-11.** llama.cpp `server-rocm-b12648`, run
+  with `GPU_MAX_HW_QUEUES=1` and a 23 GB MoE resident, idled at 15–26 W. That
+  is at the card's baseline with a small reranker loaded, and it did not spin.
+  Build, model and the queue cap all changed together, so the HIP row above has
+  not been requalified. Details: [2026-11 round](../results/2026-11-round.md#engine-notes).
