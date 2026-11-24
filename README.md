@@ -107,6 +107,27 @@ laguna-xs-2.1's 0.62 is likewise a token-budget floor — it scores 1.00 on the
 Why it matters if you're building an agentic eval:
 [`findings/two-agentic-modes.md`](findings/two-agentic-modes.md).
 
+## 2026-11 round — Qwen3.8-27B at Q8, Inkling 2 Mini, a llama.cpp lane
+
+Ollama `0.40.3-rocm` and llama.cpp `server-rocm-b12648`:
+[`results/2026-11-round.md`](results/2026-11-round.md).
+
+| candidate | engine | pass@1 | tok/s | rename | fix-loop |
+|---|---|---:|---:|:---:|:---:|
+| Qwen3.8-27B MTP Q8_0 | Ollama | **1.00** | **55.6** | 5/5 | 5/5 |
+| Qwen3.8-27B MTP q4_K_M | Ollama | 0.99 | 50.9 | 5/5 | 5/5 |
+| Qwen3.8-27B q4_K_M, no MTP | Ollama | 0.99 | 28.2 | 4/5 | 5/5 |
+| ggml-org Qwen3.8-27B Q8_0⁴ | Ollama / llama.cpp | 0.85 / 0.81 | 19.5 / 20.0 | 2/5 / 2/5 | 5/5 / 5/5 |
+| Inkling 2 Mini UD-Q8_K_XL | llama.cpp | 0.94 | 26.0 | 0/5 | 5/5 |
+
+At Q8, MTP ties q4 on quality and decodes 9% faster, but it needs 29.5 GiB at
+32K context against 18.9 GiB. Inkling 2 Mini runs on mainline llama.cpp ROCm
+on gfx1100, but it is no faster than the dense 27B and does not batch edits.
+
+⁴ This file is not the library model. It brings its own prompt template and no
+sampling parameters, and it overthinks into the token cap on both engines. The
+row measures the GGUF as shipped, not Q8 quality.
+
 ## Engineering findings
 
 - **[Dual-RDNA3 tensor parallelism](findings/rccl-dual-gpu-tp2.md)** — vLLM
@@ -173,6 +194,8 @@ Why it matters if you're building an agentic eval:
 
 - [`methodology.md`](methodology.md) — harness design, scoring, sandboxing,
   normalization, threats to validity
+- [`results/2026-11-round.md`](results/2026-11-round.md) — round 4: Qwen3.8-27B
+  MTP at Q8 vs q4, ggml-org's GGUF on two engines, Inkling 2 Mini on llama.cpp ROCm
 - [`results/2026-10-ollama-0.35-and-typed-judges.md`](results/2026-10-ollama-0.35-and-typed-judges.md) —
   Ollama 0.33.2 → 0.35.0 route smoke, Ollama's System One typed-question
   endpoint on ROCm, and CLM-v0.1-8B on vLLM's ROCm pooling runner
